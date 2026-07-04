@@ -250,8 +250,7 @@ class BranchPredictor:
         (history, pht, entry) = self._lookup(address, True)
         idx = get_pht_index(address, history, self.config.history_size, self.config.share)
         pht[idx] = counter_update(pht[idx], taken)
-
-
+        
         new_history = update_history(history, taken, self.config.history_size)
         if (self._has_local_history):
             entry.bhr = new_history
